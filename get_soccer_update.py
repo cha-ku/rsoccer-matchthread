@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 
 import praw
+from urlparse import urlparse
 #import pprint
 
-sub_id = raw_input("Enter the submission id of the text post: ")
+thrd_url = raw_input("Enter the match thread url: ")
+football_url = urlparse(thrd_url)
+sub_id = football_url.path.split('/')[4]
 
 r = praw.Reddit(user_agent = 'cmdlinesoccer')
 

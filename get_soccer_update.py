@@ -9,6 +9,15 @@ r = praw.Reddit(user_agent = 'cmdlinesoccer')
 
 mtch_thread = r.get_submission(submission_id = sub_id)
 
-getKickOff_index = mtch_thread.selftext.lower().find("1'")
+def getOpeningMin(mtch_thread_by_submission):
+    if (mtch_thread_by_submission.selftext.lower().find("1'") != -1):
+        getKickOff_index = mtch_thread_by_submission.selftext.lower().find("1'")
+    elif (mtch_thread.selftext.lower().find("1'") != -1):
+        getKickOff_index = mtch_thread.selftext.lower().find("1'")
+    else:
+        getKickOff_index = mtch_thread.selftext.lower().find(raw_input("Input the word the live update starts with: "))
+    return getKickOff_index
 
-print(mtch_thread.selftext[getKickOff_index : ])
+KickOff_index = getOpeningMin(mtch_thread)
+
+print(mtch_thread.selftext[KickOff_index : ])

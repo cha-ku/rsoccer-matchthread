@@ -18,6 +18,8 @@ def UrlRoutine(thrd_url):
 def getOpeningMin(mtch_thread_by_submission):
     """ Searches for the opening minute ( 0' or 1') in the selftext.
     If not found, asks for the starting word of the match events"""
+    if (mtch_thread_by_submission.selftext.lower().find("match events") != -1):
+        getKickOff_index = mtch_thread_by_submission.selftext.lower().find("match events")
     if (mtch_thread_by_submission.selftext.lower().find("0'") != -1):
         getKickOff_index = mtch_thread_by_submission.selftext.lower().find("0'")
     elif (mtch_thread.selftext.lower().find("1'") != -1):

@@ -17,6 +17,7 @@ def UrlRoutine(thrd_url):
     return mtch_slftxt
 
 def getOpeningMin(mtch_thread_by_submission):
+    """Checks for "Match Events" or "0'" or "1'" to get to the match events section"""
     getKickOff_index = mtch_thread_by_submission.selftext.lower().find("match events")
     if (getKickOff_index == -1):
         getKickOff_index = mtch_thread_by_submission.selftext.lower().find("0'")
@@ -27,7 +28,7 @@ def getOpeningMin(mtch_thread_by_submission):
     return getKickOff_index
 
 def CleanseAndPrint(match_thread , match_events_index):
-    """ Removes a bunch of unnecessary parts []#sprite6-p177 and []#icon-sub-big """
+    """ Removes a bunch of unnecessary parts such as []#sprite6-p177 and []#icon-sub-big from the selftext """
     dirty_match_thread = match_thread.selftext[match_events_index : ]
     clean_match_thread = re.sub(r'\[\]\([^)]*\)', '', dirty_match_thread)
     return clean_match_thread
@@ -36,7 +37,6 @@ try:
     while True:
         mtch_thread = UrlRoutine(getUrl)
         KickOff_index = getOpeningMin(mtch_thread)
-        # print(mtch_thread.selftext[KickOff_index : ])
         print CleanseAndPrint(mtch_thread , KickOff_index)
         time.sleep(sleepytime)
 except KeyboardInterrupt:

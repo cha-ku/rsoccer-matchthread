@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+"""This writes to a live_matchThread.txt"""
+
 if __name__ == '__main__':
     getUrl = raw_input("Enter the match thread url: ")
 

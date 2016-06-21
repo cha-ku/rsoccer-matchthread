@@ -1,3 +1,5 @@
+"""This is the file that attempts to do a tail -f on the file written in by createthefile.py """
+
 import time
 
 def follow(thefile):

@@ -31,7 +31,7 @@ def CleanseAndPrint(match_thread , match_events_index):
 
 def printToFile(mtch_thread , KO_indx):
     livetextfile = open("live_matchThread.txt","w")
-    livetextfile.truncate()
+    #livetextfile.truncate()
     livetext = CleanseAndPrint(mtch_thread , KO_indx)
     livetextfile.write(str(livetext.encode('utf-8')))
-    livetextfile.close()
+    #livetextfile.close()

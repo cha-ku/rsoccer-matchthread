@@ -5,9 +5,9 @@ import time
 def follow(thefile):
     thefile.seek(0,0)
     while True:
-	line = thefile.readline()
+        line = thefile.readline()
         if not line:
-            time.sleep(0.1)
+            time.sleep(10)
             continue
         yield line
 

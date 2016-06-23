@@ -20,6 +20,6 @@ if __name__ == '__main__':
             os.system('cls' if os.name == 'nt' else 'clear')
             dostuff(getUrl)
             time.sleep(30)
-            print "slept 30 seconds"
         except KeyboardInterrupt:
             print "Back to work, eh?"
+            break

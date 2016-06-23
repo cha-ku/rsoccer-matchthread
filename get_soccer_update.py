@@ -30,16 +30,6 @@ def CleanseAndPrint(match_thread , match_events_index):
     clean_match_thread = re.sub(r'\[\]\([^)]*\)', '', dirty_match_thread)
     return clean_match_thread
 
-# def printToFile(mtch_thread , KO_indx):
-#     livetextfile = open("live_matchThread.txt","w")
-#     #livetextfile.truncate()
-#     livetext = CleanseAndPrint(mtch_thread , KO_indx)
-#     livetextfile.write(str(livetext.encode('utf-8')))
-#     #livetextfile.close()
-
 def justPrintIt(mtch_thread, KO_indx):
-    while True:
-        print CleanseAndPrint(mtch_thread , KO_indx)
-        time.sleep(30)
-        # except KeyboardInterrupt:
-        #     print "Back to work, eh!?"
+    print CleanseAndPrint(mtch_thread , KO_indx)
+    time.sleep(30)

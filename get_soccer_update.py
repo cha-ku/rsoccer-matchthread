@@ -11,9 +11,8 @@ def UrlRoutine(thrd_url , red):
     mtch_slftxt = red.get_submission(submission_id = football_url.path.split('/')[4])
     return mtch_slftxt
 
-def getOpeningMin(mtch_thread_by_submission):
+def getOpeningMin(mtch_thread_by_submission, manual_entry):
     """Directly asks user for the match events keyword"""
-    manual_entry = raw_input("Input the starting word(s) of the match events : ")
     getKickOff_index = mtch_thread_by_submission.selftext.lower().find(manual_entry.lower())
     return getKickOff_index
 

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 getUrl = raw_input("Enter the match thread url: ")
+keyword = raw_input("Input the starting word(s) of the match events : ")
 
 if __name__ == '__main__':
     import get_soccer_update as update
@@ -12,7 +13,7 @@ if __name__ == '__main__':
     def dostuff(url):
         r = praw.Reddit(user_agent = 'cmdlinesoccer')
         match_thread = update.UrlRoutine(url , r)
-        KickOff_index = update.getOpeningMin(match_thread)
+        KickOff_index = update.getOpeningMin(match_thread, keyword)
         update.justPrintIt(match_thread, KickOff_index)
 
     while True:

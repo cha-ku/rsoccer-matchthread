@@ -1,0 +1,12 @@
+Requires the Python Wrapper for Reddit API (PRAW). You can install it using the command 'pip install praw'.
+
+Steps to install:
+1. Install PRAW
+2. On the terminal, do a 'git clone https://github.com/chaiku/rsoccer-matchthread.git'
+3. cd rsoccer-matchthread/
+4. python print2screen.py
+5. Enter the URL of the reddit live thread
+6. Enter some words from the live thread to trigger the live updates from. Should be like 'match events' or 'kickoff'
+
+Enjoy the live updates on your terminal screen and pretend that you're working :p
+ 

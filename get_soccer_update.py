@@ -4,7 +4,6 @@ import praw
 from urlparse import urlparse
 import time
 import re
-#import os
 
 def UrlRoutine(thrd_url , red):
     """ Returns the selftext  """
@@ -14,14 +13,8 @@ def UrlRoutine(thrd_url , red):
 
 def getOpeningMin(mtch_thread_by_submission):
     """Directly asks user for the match events keyword"""
-    # getKickOff_index = mtch_thread_by_submission.selftext.lower().find("match events")
-    # if (getKickOff_index == -1):
     manual_entry = raw_input("Input the starting word(s) of the match events : ")
     getKickOff_index = mtch_thread_by_submission.selftext.lower().find(manual_entry.lower())
-        # getKickOff_index = mtch_thread_by_submission.selftext.lower().find("0'")
-        # if (getKickOff_index == -1):
-        #     getKickOff_index = mtch_thread_by_submission.selftext.lower().find("1'")
-        # else:
     return getKickOff_index
 
 def CleanseAndPrint(match_thread , match_events_index):

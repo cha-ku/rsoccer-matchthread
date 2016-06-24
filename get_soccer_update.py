@@ -13,15 +13,15 @@ def UrlRoutine(thrd_url , red):
     return mtch_slftxt
 
 def getOpeningMin(mtch_thread_by_submission):
-    """Checks for "Match Events" or "0'" or "1'" to get to the match events section"""
-    getKickOff_index = mtch_thread_by_submission.selftext.lower().find("match events")
-    if (getKickOff_index == -1):
-        getKickOff_index = mtch_thread_by_submission.selftext.lower().find("0'")
-        if (getKickOff_index == -1):
-            getKickOff_index = mtch_thread_by_submission.selftext.lower().find("1'")
-        else:
-            manual_entry = raw_input("Input the starting word of the match events : ")
-            getKickOff_index = mtch_thread_by_submission.selftext.lower().find(manual_entry)
+    """Directly asks user for the match events keyword"""
+    # getKickOff_index = mtch_thread_by_submission.selftext.lower().find("match events")
+    # if (getKickOff_index == -1):
+    manual_entry = raw_input("Input the starting word(s) of the match events : ")
+    getKickOff_index = mtch_thread_by_submission.selftext.lower().find(manual_entry.lower())
+        # getKickOff_index = mtch_thread_by_submission.selftext.lower().find("0'")
+        # if (getKickOff_index == -1):
+        #     getKickOff_index = mtch_thread_by_submission.selftext.lower().find("1'")
+        # else:
     return getKickOff_index
 
 def CleanseAndPrint(match_thread , match_events_index):

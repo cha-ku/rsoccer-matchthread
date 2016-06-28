@@ -1,3 +1,7 @@
 *.pyc
 *.sh
 *.txt
+followthefile.py
+createthefile.py
+cmdlinesoccer.py
+
